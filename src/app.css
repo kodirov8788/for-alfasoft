@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+.App {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   font-family: "Nunito", sans-serif;
+   background-image: linear-gradient(90deg, #410076, #8820dd);
+}
+
+body {
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.collection {
+   width: 60%;
+   height: 80vh;
+   background: #fff;
+   scroll-behavior: smooth;
+   overflow-y: scroll;
+}
+
+.listItem {
+   width: auto;
+   padding: 10px;
+   background: #ccc;
+   margin: 5px 10px;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: 0.255s;
+
+}
+
+.listItem:hover {
+   transform: scale(1.02);
+
+}
