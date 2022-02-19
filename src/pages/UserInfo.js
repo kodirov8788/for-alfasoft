@@ -14,6 +14,8 @@ const UserInfo = () => {
    const [pageNumber, setPageNumber] = useState(1);
    const location = useLocation()
    const observer = useRef()
+   console.log(error);
+   console.log(repoData);
    useEffect(() => {
       fetch(`${location.state.repos_url}`)
          .then(response => response.json())
@@ -23,7 +25,7 @@ const UserInfo = () => {
          .catch(function (error) {
             console.log(error);
          });
-   }, [])
+   }, [location.state])
 
    useEffect(() => {
 
@@ -43,10 +45,8 @@ const UserInfo = () => {
          }).catch(e => {
             if (axios.isCancel(e)) return
             setError(true)
-            console.log("e>>", e);
          })
          return () => cancel()
-
       }, 1000)
    }, [userLogin, pageNumber])
 
@@ -60,7 +60,7 @@ const UserInfo = () => {
 
    useEffect(() => {
       localStorage.setItem("kodirov__box", JSON.stringify(location.state.login));
-   }, [location.state.login]);
+   }, [location.state]);
 
    const kodirov__box = JSON.parse(
       localStorage.getItem("kodirov__box")

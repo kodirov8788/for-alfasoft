@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import UserSearch from './UserSearch'
 import "./app.css"
 import { Link } from "react-router-dom"

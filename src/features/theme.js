@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useEffect } from "react"
-import { useDispatch } from "react-redux";
 const initialStateValue = "";
 
 export const themeSlice = createSlice({
@@ -13,14 +11,6 @@ export const themeSlice = createSlice({
     },
   },
 });
-
-const kodirov__box = JSON.parse(
-  localStorage.getItem("kodirov__box")
-);
-
-
-
-
 
 export const { changeColor } = themeSlice.actions;
 
