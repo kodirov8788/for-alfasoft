@@ -1,8 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import UserSearch from './UserSearch'
 import "./app.css"
-import { useDispatch } from "react-redux";
-import { changeColor } from "./features/theme";
 import { Link } from "react-router-dom"
 
 
