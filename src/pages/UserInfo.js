@@ -81,11 +81,11 @@ const UserInfo = () => {
          <h1>state is : {location.state.login}</h1>
          {repo.map((repoDataItem, index) => {
             if (repo.length === index + 1) {
-               return <div className="listItem" ref={lastrepoDataItemElementRef} onClick={() => setRepoData(repoDataItem.name)}>
+               return <div className="listItem" key={index} ref={lastrepoDataItemElementRef} onClick={() => setRepoData(repoDataItem.name)}>
                   <h1 to="/userId" state={repoDataItem}>{repoDataItem.name}</h1>
                </div>
             } else {
-               return <div className="listItem" ref={lastrepoDataItemElementRef} onClick={() => setRepoData(repoDataItem.name)}><h1 to="/userId" state={repoDataItem}>{repoDataItem.name}</h1></div>
+               return <div className="listItem" key={index} ref={lastrepoDataItemElementRef} onClick={() => setRepoData(repoDataItem.name)}><h1 to="/userId" state={repoDataItem}>{repoDataItem.name}</h1></div>
             }
          })}
          <div>{loading && 'Loading...'}</div>

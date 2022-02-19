@@ -40,11 +40,11 @@ export default function App() {
     <><input type="text" value={query} onChange={handleSearch} />
       {gitApi.map((git, index) => {
         if (gitApi.length === index + 1) {
-          return <div className="listItem" ref={lastgitElementRef} >
+          return <div className="listItem" key={index} ref={lastgitElementRef} >
             <Link to="/userId" state={git}>{git.login}</Link>
           </div>
         } else {
-          return <div className="listItem" ref={lastgitElementRef} ><Link to="/userId" state={git}>{git.login}</Link></div>
+          return <div className="listItem" key={index} ref={lastgitElementRef} ><Link to="/userId" state={git}>{git.login}</Link></div>
         }
       })}
       <div>{loading && 'Loading...'}</div>
