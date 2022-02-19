@@ -26,6 +26,7 @@ const UserInfo = () => {
    }, [])
 
    useEffect(() => {
+
       setLoading(true)
       setError(false)
       let cancel

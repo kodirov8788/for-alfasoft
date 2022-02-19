@@ -7,7 +7,6 @@ import { Link } from "react-router-dom"
 export default function App() {
   const [query, setQuery] = useState('')
   const [pageNumber, setPageNumber] = useState(1)
-  const [userInfo, setUserInfo] = useState("")
 
   const {
     gitApi,
