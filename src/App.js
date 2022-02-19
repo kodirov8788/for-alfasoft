@@ -7,7 +7,6 @@ import { Link } from "react-router-dom"
 
 
 export default function App() {
-  const dispatch = useDispatch();
   const [query, setQuery] = useState('')
   const [pageNumber, setPageNumber] = useState(1)
   const [userInfo, setUserInfo] = useState("")
@@ -41,11 +40,11 @@ export default function App() {
     <><input type="text" value={query} onChange={handleSearch} />
       {gitApi.map((git, index) => {
         if (gitApi.length === index + 1) {
-          return <div className="listItem" ref={lastgitElementRef} onClick={() => setUserInfo(git.login)}>
+          return <div className="listItem" ref={lastgitElementRef} >
             <Link to="/userId" state={git}>{git.login}</Link>
           </div>
         } else {
-          return <div className="listItem" ref={lastgitElementRef} onClick={() => setUserInfo(git.login)}><Link to="/userId" state={git}>{git.login}</Link></div>
+          return <div className="listItem" ref={lastgitElementRef} ><Link to="/userId" state={git}>{git.login}</Link></div>
         }
       })}
       <div>{loading && 'Loading...'}</div>
