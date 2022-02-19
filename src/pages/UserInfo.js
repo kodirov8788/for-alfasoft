@@ -10,7 +10,6 @@ const UserInfo = () => {
    const [repo, setRepo] = useState([])
    const [repoData, setRepoData] = useState()
    const [hasMore, setHasMore] = useState(false)
-   const [userLogin, setUserLogin] = useState('')
    const [pageNumber, setPageNumber] = useState(1);
    const location = useLocation()
    const observer = useRef()
@@ -48,15 +47,14 @@ const UserInfo = () => {
          })
          return () => cancel()
       }, 1000)
-   }, [userLogin, pageNumber])
+   }, [location.state, pageNumber])
 
    useEffect(() => {
       const getuserId = () => {
          dispatch(changeColor(location.state.login));
-         setUserLogin(location.state.login)
       }
       getuserId()
-   }, [])
+   }, [location.state, dispatch])
 
    useEffect(() => {
       localStorage.setItem("kodirov__box", JSON.stringify(location.state.login));
